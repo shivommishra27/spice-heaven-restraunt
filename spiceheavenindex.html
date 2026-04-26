@@ -1,259 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spice Heaven</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #fff8f0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spice Heaven 🌶️</title>
 
-        /* Header */
-        header {
-            background-color: #ff6f3c;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        header img {
-            height: 60px;
-            vertical-align: middle;
-        }
-        header h1 {
-            display: inline;
-            margin-left: 10px;
-            font-size: 2rem;
-            vertical-align: middle;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-        /* Navbar */
-        nav {
-            background-color: #ffb57c;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 10px 20px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
+<style>
+body {margin:0;font-family:sans-serif;background:#fff8f0;}
+header {background:#1a0a00;color:#fff;display:flex;justify-content:space-between;padding:15px;}
+nav a {color:#fff;margin:0 10px;text-decoration:none;}
+.menu-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:20px;}
+.food-card {background:#fff;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+.food-card img {width:100%;height:180px;object-fit:cover;}
+.card-body {padding:15px;}
+.price {color:#ff4500;font-weight:bold;}
+button {background:#1a0a00;color:#fff;border:none;padding:8px 15px;cursor:pointer;border-radius:5px;}
+button:hover {background:#ff4500;}
+#toast {position:fixed;bottom:20px;right:20px;background:#1a0a00;color:#fff;padding:10px;border-radius:5px;display:none;}
+</style>
 
-        /* Home Section */
-        #home {
-            text-align: center;
-            padding: 60px 20px;
-            background: url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?fit=crop&w=1200&q=80') center/cover no-repeat;
-            color: white;
-        }
-        #home h2 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        #home p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: auto;
-        }
-
-        /* Menu Section */
-        .food-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 40px 20px;
-            gap: 30px;
-        }
-        .food-item {
-            background-color: #fff3e6;
-            border-radius: 15px;
-            overflow: hidden;
-            width: 250px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        .food-item:hover {
-            transform: scale(1.05);
-        }
-        .food-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .food-item h3 {
-            margin: 15px;
-            font-size: 1.2rem;
-            color: #333;
-        }
-        .food-item p {
-            margin: 0 15px 15px 15px;
-            color: #666;
-        }
-        .food-item button {
-            margin: 0 15px 15px 15px;
-            padding: 10px;
-            width: calc(100% - 30px);
-            background-color: #ff6f3c;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .food-item button:hover {
-            background-color: #e55a25;
-        }
-
-        /* About Section */
-        #about {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: #fff3e6;
-        }
-        #about h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        #about p {
-            max-width: 700px;
-            margin: auto;
-            font-size: 1.1rem;
-            color: #555;
-        }
-
-        /* Contact Section */
-        #contact {
-            background-color: #ff6f3c;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        #contact p {
-            margin: 10px 0;
-            font-size: 1.1rem;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            background-color: #ffb57c;
-            color: white;
-            padding: 20px;
-        }
-
-        /* Responsive */
-        @media(max-width: 768px){
-            .food-item {
-                width: 90%;
-            }
-            nav {
-                flex-direction: column;
-            }
-        }
-
-    </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <img src="https://via.placeholder.com/60" alt="Spice Heaven Logo">
-        <h1>Spice Heaven</h1>
-    </header>
+<header>
+<h2>🌶️ Spice Heaven</h2>
+<nav>
+<a href="#">Home</a>
+<a href="#">Menu</a>
+</nav>
+</header>
 
-    <!-- Navbar -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<h2 style="text-align:center;">Our Menu</h2>
 
-    <!-- Home Section -->
-    <section id="home">
-        <h2>Welcome to Spice Heaven</h2>
-        <p>Experience the best flavors from around the world. Fresh ingredients, delicious recipes, and a cozy atmosphere await you!</p>
-    </section>
+<div class="menu-grid" id="menuGrid">
 
-    <!-- Menu Section -->
-    <section id="menu" class="food-section">
-        <div class="food-item">
-            <img src="https://images.unsplash.com/photo-1606755962776-4e24aa914ab4?fit=crop&w=500&q=80" alt="Pizza">
-            <h3>Margherita Pizza</h3>
-            <p>Classic pizza with fresh tomatoes, mozzarella, and basil.</p>
-            <button>Order Now</button>
-        </div>
-        <div class="food-item">
-            <img src="https://images.unsplash.com/photo-1617196036492-7f1a58f689d0?fit=crop&w=500&q=80" alt="Burger">
-            <h3>Cheese Burger</h3>
-            <p>Juicy beef patty with cheddar, lettuce, and tomato.</p>
-            <button>Order Now</button>
-        </div>
-        <div class="food-item">
-            <img src="https://images.unsplash.com/photo-1604908177525-1b34fbbd65f2?fit=crop&w=500&q=80" alt="Pasta">
-            <h3>Spaghetti Alfredo</h3>
-            <p>Creamy Alfredo sauce with perfectly cooked spaghetti.</p>
-            <button>Order Now</button>
-        </div>
-        <div class="food-item">
-            <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb44?fit=crop&w=500&q=80" alt="Salad">
-            <h3>Caesar Salad</h3>
-            <p>Fresh romaine lettuce with Caesar dressing and croutons.</p>
-            <button>Order Now</button>
-        </div>
-        <div class="food-item">
-            <img src="https://images.unsplash.com/photo-1603078836942-7c3a82da1621?fit=crop&w=500&q=80" alt="Dessert">
-            <h3>Chocolate Cake</h3>
-            <p>Rich and moist chocolate cake topped with ganache.</p>
-            <button>Order Now</button>
-        </div>
-        <div class="food-item">
-            <img src="https://images.unsplash.com/photo-1563805042-7684bfb6c9ff?fit=crop&w=500&q=80" alt="Sushi">
-            <h3>Sushi Platter</h3>
-            <p>Freshly prepared sushi with salmon, tuna, and veggies.</p>
-            <button>Order Now</button>
-        </div>
-        <div class="food-item">
-            <img src="https://images.unsplash.com/photo-1600628422080-2b0e0b5ed905?fit=crop&w=500&q=80" alt="Tacos">
-            <h3>Mexican Tacos</h3>
-            <p>Spicy chicken tacos with fresh salsa and cheese.</p>
-            <button>Order Now</button>
-        </div>
-        <div class="food-item">
-            <img src="https://images.unsplash.com/photo-1617196036402-2cabbec7d0e2?fit=crop&w=500&q=80" alt="Ice Cream">
-            <h3>Vanilla Ice Cream</h3>
-            <p>Creamy vanilla ice cream served with chocolate syrup.</p>
-            <button>Order Now</button>
-        </div>
-    </section>
+<div class="food-card" data-cat="main">
+<img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>Margherita Pizza</h3>
+<p>Classic pizza with cheese</p>
+<span class="price">₹299</span>
+<button onclick="placeOrder('Pizza')">Order</button>
+</div>
+</div>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Spice Heaven</h2>
-        <p>At Spice Heaven, we believe food is love served on a plate. Our chefs craft each dish with passion, using fresh ingredients and authentic recipes. Whether you're craving comfort food or exotic flavors, our menu has something special for everyone.</p>
-    </section>
+<div class="food-card" data-cat="main">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>Cheese Burger</h3>
+<p>Juicy burger</p>
+<span class="price">₹249</span>
+<button onclick="placeOrder('Burger')">Order</button>
+</div>
+</div>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <p>📍 123 Spice Street, Food City</p>
-        <p>📞 +91 98765 43210</p>
-        <p>🍴 Spice Heaven</p>
-    </section>
+<div class="food-card" data-cat="main">
+<img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>Spaghetti Alfredo</h3>
+<p>Creamy pasta</p>
+<span class="price">₹279</span>
+<button onclick="placeOrder('Pasta')">Order</button>
+</div>
+</div>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2026 Spice Heaven. All Rights Reserved.
-    </footer>
+<div class="food-card" data-cat="snack">
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>Caesar Salad</h3>
+<p>Healthy salad</p>
+<span class="price">₹199</span>
+<button onclick="placeOrder('Salad')">Order</button>
+</div>
+</div>
+
+<div class="food-card" data-cat="dessert">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>Chocolate Lava Cake</h3>
+<p>Sweet dessert</p>
+<span class="price">₹179</span>
+<button onclick="placeOrder('Cake')">Order</button>
+</div>
+</div>
+
+<div class="food-card" data-cat="main">
+<img src="https://images.unsplash.com/photo-1553621042-f6e147245754?fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>Sushi Platter</h3>
+<p>Fresh sushi rolls</p>
+<span class="price">₹399</span>
+<button onclick="placeOrder('Sushi')">Order</button>
+</div>
+</div>
+
+</div>
+
+<div id="toast"></div>
+
+<script>
+function placeOrder(item){
+  const toast = document.getElementById("toast");
+  toast.innerText = item + " ordered successfully!";
+  toast.style.display = "block";
+  setTimeout(()=>{ toast.style.display="none"; },2000);
+}
+</script>
 
 </body>
 </html>
